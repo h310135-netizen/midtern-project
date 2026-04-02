@@ -69,7 +69,7 @@ export default function App() {
 
       {/* Header */}
       <header className="py-16 text-center cursor-pointer" onClick={() => handleNavClick({type: 'home'})}>
-        <h1 className="font-serif text-5xl md:text-6xl tracking-widest mb-4 hover:text-gray-600 transition-colors">
+        <h1 className="font-serif text-5xl md:text-6xl tracking-widest mb-4 text-gray-900 transition-all duration-300 hover:text-blue-600 hover:scale-105 hover:shadow-[0_0_20px_rgba(0,0,255,0.2)]">
           {content.siteName}
         </h1>
         <p className="text-gray-500 tracking-[0.2em] text-xs uppercase">
@@ -304,7 +304,7 @@ export default function App() {
                 </div>
 
                 {/* Follow Me Widget */}
-                <div className="text-center p-10 border border-gray-100" style={{ backgroundColor: theme.sidebarBackground }}>
+                <div className="text-center p-10 border border-gray-100" style={{ backgroundColor: theme.primaryColor }}>
                   <h4 className="font-serif text-xl mb-8 tracking-[0.15em] uppercase">
                     Follow Me
                   </h4>

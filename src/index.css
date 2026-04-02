@@ -1,21 +1,112 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700&family=Oxanium:wght@300;400;500;700&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Cormorant Garamond", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-sans: "Raleway", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Oxanium", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
 :root {
-  --color-primary: #222222;
-  --color-accent: #888888;
-  --color-bg: #ffffff;
-  --color-footer-bg: #111111;
-  --color-sidebar-bg: #fafafa;
+  --color-primary: #ff2a97;
+  --color-accent: #0eb7fa;
+;
+  --color-bg: #100014;
+  --color-footer-bg: #0b0020;
+  --color-sidebar-bg: #21003a;
 }
 
 body {
-  background-color: var(--color-bg);
+  background: radial-gradient(circle at 20% 20%, rgba(50, 10, 80, 0.95), transparent 35%),
+              radial-gradient(circle at 80% 30%, rgba(255, 0, 180, 0.35), transparent 50%),
+              linear-gradient(135deg, #100014, #12001b 40%, #180032);
   color: var(--color-primary);
   scroll-behavior: smooth;
+  backdrop-filter: blur(0.6px);
 }
+
+/* 標題全體（含小標）藍色霓紅燈 */
+h1, h2, h3, h4, h5, h6 {
+  color: #50e1ff;
+  text-shadow: 0 0 12px rgba(80, 225, 255, 1), 0 0 24px rgba(0, 219, 255, 0.8), 0 0 45px rgba(120, 0, 255, 0.45);
+}
+
+h2:hover,
+h3:hover,
+h4:hover,
+h5:hover,
+h6:hover {
+  color: #caf3ff;
+  transform: scale(1.05);
+  text-shadow: 0 0 18px rgba(80, 225, 255, 1), 0 0 32px rgba(20, 160, 255, 0.95), 0 0 68px rgba(156, 0, 255, 0.6);
+}
+
+/* 通用標題 hover 效果 */
+h1:hover,
+h2:hover,
+h3:hover,
+h4:hover,
+h5:hover,
+h6:hover {
+  color: #b9f8ff;
+  transform: scale(1.08);
+  text-shadow: 0 0 16px rgba(0, 194, 255, 1), 0 0 30px rgba(137, 0, 255, 0.8), 0 0 60px rgba(0, 255, 219, 0.8);
+  box-shadow: 0 0 35px rgba(63, 197, 255, 0.7), 0 0 45px rgba(90, 0, 255, 0.6);
+  transition: color 0.16s ease, transform 0.16s ease, text-shadow 0.16s ease, box-shadow 0.16s ease;
+}
+
+/* 按鈕 / 互動元素 neon */
+button,
+a {
+  transition: all 0.2s ease;
+}
+
+button:hover,
+a:hover {
+  color: #e2ff00;
+  text-shadow: 0 0 12px rgba(226, 255, 0, 1.0), 0 0 20px rgba(255, 38, 183, 0.7);
+  transform: translateY(-1px) scale(1.02);
+}
+
+/* 全站無特效文字附上紅色霓紅燈 */
+body,
+.text-gray-500,
+.text-gray-400,
+.text-gray-600,
+.text-gray-700,
+.text-gray-900,
+.text-xs,
+.text-sm,
+.text-base,
+.text-lg,
+.text-xl,
+.text-2xl,
+.text-3xl {
+  color: #ff2a97 !important;
+  text-shadow: 0 0 8px rgba(255, 42, 151, 0.9), 0 0 20px rgba(255, 42, 151, 0.65), 0 0 40px rgba(255, 14, 94, 0.35);
+}
+
+/* 文章段落既有紅光效果再疊加 */
+.prose p {
+  color: #ff2a97;
+  text-shadow: 0 0 8px rgba(255, 42, 151, 0.9), 0 0 20px rgba(255, 42, 151, 0.65), 0 0 30px rgba(255, 0, 80, 0.45);
+  transition: text-shadow 0.3s ease, color 0.2s ease;
+}
+
+.prose p:hover {
+  color: #ff94c7;
+  text-shadow: 0 0 13px rgba(255, 42, 151, 1), 0 0 35px rgba(255, 42, 151, 0.95), 0 0 60px rgba(255, 20, 100, 0.55);
+}
+/* 按鈕 / 互動元素 neon */
+button,
+a {
+  transition: all 0.2s ease;
+}
+
+button:hover,
+a:hover {
+  color: #00f2ff;
+  text-shadow: 0 0 10px rgba(0,242,255,0.85);
+  transform: translateY(-1px);
+}
+
+

@@ -79,11 +79,11 @@
 ```json
 {
   "theme": {
-    "primaryColor": "#222222",
-    "accentColor": "#888888",
-    "backgroundColor": "#ffffff",
-    "footerBackground": "#111111",
-    "sidebarBackground": "#fafafa",
+    "primaryColor": "#ce6d6d",
+    "accentColor": "#55b4daee",
+    "backgroundColor": "#ff1cff",
+    "footerBackground": "#b411dd",
+    "sidebarBackground": "#d148dd",
     "fontSans": "Montserrat",
     "fontSerif": "Cormorant Garamond"
   }
