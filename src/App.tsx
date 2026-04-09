@@ -38,19 +38,11 @@ export default function App() {
   const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
   const paginatedPosts = content.posts.slice(startIndex, startIndex + POSTS_PER_PAGE);
 
-  const social = content.socialLinks;
   const SocialIcons = ({ size = 16, strokeWidth = 1.5, className = "text-gray-400 hover:text-black transition-colors" }: { size?: number, strokeWidth?: number, className?: string }) => (
     <>
-      {social.instagram && <a href={social.instagram} target="_blank" rel="noopener noreferrer" className={className}><Instagram size={size} strokeWidth={strokeWidth} /></a>}
-      {social.facebook && <a href={social.facebook} target="_blank" rel="noopener noreferrer" className={className}><Facebook size={size} strokeWidth={strokeWidth} /></a>}
-      {social.twitter && <a href={social.twitter} target="_blank" rel="noopener noreferrer" className={className}><Twitter size={size} strokeWidth={strokeWidth} /></a>}
-      {!social.instagram && !social.facebook && !social.twitter && (
-        <>
-          <a href="#" className={className}><Instagram size={size} strokeWidth={strokeWidth} /></a>
-          <a href="#" className={className}><Facebook size={size} strokeWidth={strokeWidth} /></a>
-          <a href="#" className={className}><Twitter size={size} strokeWidth={strokeWidth} /></a>
-        </>
-      )}
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className={className}><Instagram size={size} strokeWidth={strokeWidth} /></a>
+      <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" className={className}><Facebook size={size} strokeWidth={strokeWidth} /></a>
+      <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" className={className}><Twitter size={size} strokeWidth={strokeWidth} /></a>
     </>
   );
 
@@ -69,7 +61,7 @@ export default function App() {
 
       {/* Header */}
       <header className="py-16 text-center cursor-pointer" onClick={() => handleNavClick({type: 'home'})}>
-        <h1 className="font-serif text-5xl md:text-6xl tracking-widest mb-4 text-gray-900 transition-all duration-300 hover:text-blue-600 hover:scale-105 hover:shadow-[0_0_20px_rgba(0,0,255,0.2)]">
+        <h1 className="font-serif text-5xl md:text-6xl tracking-widest mb-4 blue-neon-title transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(0,0,255,0.2)]">
           {content.siteName}
         </h1>
         <p className="text-gray-500 tracking-[0.2em] text-xs uppercase">
@@ -108,7 +100,7 @@ export default function App() {
               <span className="text-xs font-medium tracking-[0.2em] text-gray-400 uppercase mb-6 block">
                 {activePost.category} <span className="mx-2">|</span> {activePost.date}
               </span>
-              <h2 className="font-serif text-4xl md:text-5xl mb-8 leading-tight">
+              <h2 className="font-serif text-4xl md:text-5xl mb-8 leading-tight blue-neon-title">
                 {activePost.title}
               </h2>
             </div>
@@ -139,7 +131,7 @@ export default function App() {
           /* Category View */
           <div className="animate-in fade-in duration-700">
             <div className="mb-16 text-center border-b border-gray-100 pb-16">
-              <h2 className="font-serif text-4xl tracking-widest uppercase">{activeView.value}</h2>
+              <h2 className="font-serif text-4xl tracking-widest uppercase blue-neon-title">{activeView.value}</h2>
               <p className="text-gray-500 mt-4 tracking-[0.2em] text-xs uppercase">Category Archives</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
@@ -152,7 +144,7 @@ export default function App() {
                     <span className="text-xs font-medium tracking-[0.2em] text-gray-400 uppercase mb-3 block">
                       {post.date}
                     </span>
-                    <h3 className="font-serif text-xl mb-4 group-hover:text-gray-500 transition-colors duration-300">
+                    <h3 className="font-serif text-xl mb-4 transition-colors duration-300 blue-neon-title">
                       {post.title}
                     </h3>
                     <button className="text-[10px] font-medium tracking-[0.2em] uppercase border-b border-black pb-1 hover:text-gray-400 hover:border-gray-400 transition-all">
@@ -169,9 +161,9 @@ export default function App() {
         ) : activeView.type === 'about' ? (
           /* About View */
           <div className="max-w-3xl mx-auto text-center animate-in fade-in duration-700 py-10">
-            <h2 className="font-serif text-4xl tracking-widest uppercase mb-12">{content.sidebar.about.title}</h2>
+            <h2 className="font-serif text-4xl tracking-widest uppercase mb-12 blue-neon-title">{content.sidebar.about.title}</h2>
             <img src={content.sidebar.about.image} alt={content.sidebar.about.name} className="w-full max-w-md mx-auto mb-10 object-cover aspect-[4/5]" />
-            <h3 className="font-serif text-3xl mb-6">{content.sidebar.about.name}</h3>
+            <h3 className="font-serif text-3xl mb-6 blue-neon-title">{content.sidebar.about.name}</h3>
             <p className="text-gray-600 leading-loose font-light text-lg">
               {content.sidebar.about.description}
             </p>
@@ -199,7 +191,7 @@ export default function App() {
                   <span className="text-xs font-medium tracking-[0.2em] text-gray-400 uppercase mb-4 block">
                     {content.heroPost.category} <span className="mx-2">|</span> {content.heroPost.date}
                   </span>
-                  <h2 className="font-serif text-3xl md:text-5xl mb-6 group-hover:text-gray-500 transition-colors duration-300 leading-tight">
+                  <h2 className="font-serif text-3xl md:text-5xl mb-6 transition-colors duration-300 leading-tight blue-neon-title">
                     {content.heroPost.title}
                   </h2>
                   <p className="text-gray-500 leading-relaxed mb-8 font-light">
@@ -228,7 +220,7 @@ export default function App() {
                       <span className="text-xs font-medium tracking-[0.2em] text-gray-400 uppercase mb-4 block">
                         {post.category} <span className="mx-2">|</span> {post.date}
                       </span>
-                      <h3 className="font-serif text-2xl md:text-3xl mb-5 group-hover:text-gray-500 transition-colors duration-300">
+                      <h3 className="font-serif text-2xl md:text-3xl mb-5 transition-colors duration-300 blue-neon-title">
                         {post.title}
                       </h3>
                       <p className="text-gray-500 leading-relaxed mb-6 text-sm font-light">
@@ -269,7 +261,7 @@ export default function App() {
               <aside className="lg:col-span-4 space-y-16">
                 {/* About Widget */}
                 <div className="text-center">
-                  <h4 className="font-serif text-xl mb-8 tracking-[0.15em] uppercase relative after:content-[''] after:block after:w-8 after:h-[1px] after:bg-black after:mx-auto after:mt-4">
+                  <h4 className="font-serif text-xl mb-8 tracking-[0.15em] uppercase relative after:content-[''] after:block after:w-8 after:h-[1px] after:bg-black after:mx-auto after:mt-4 blue-neon-title">
                     {content.sidebar.about.title}
                   </h4>
                   <div className="overflow-hidden mb-6 cursor-pointer" onClick={() => handleNavClick({type: 'about'})}>
@@ -279,7 +271,7 @@ export default function App() {
                       className="w-full aspect-[4/5] object-cover hover:scale-105 transition-transform duration-700 ease-out"
                     />
                   </div>
-                  <h5 className="font-serif text-2xl mb-3">{content.sidebar.about.name}</h5>
+                  <h5 className="font-serif text-2xl mb-3 blue-neon-title">{content.sidebar.about.name}</h5>
                   <p className="text-gray-500 text-sm leading-relaxed font-light">
                     {content.sidebar.about.description}
                   </p>
@@ -290,7 +282,7 @@ export default function App() {
 
                 {/* Categories Widget */}
                 <div>
-                  <h4 className="font-serif text-xl mb-8 tracking-[0.15em] uppercase text-center relative after:content-[''] after:block after:w-8 after:h-[1px] after:bg-black after:mx-auto after:mt-4">
+                  <h4 className="font-serif text-xl mb-8 tracking-[0.15em] uppercase text-center relative after:content-[''] after:block after:w-8 after:h-[1px] after:bg-black after:mx-auto after:mt-4 blue-neon-title">
                     Categories
                   </h4>
                   <ul className="space-y-4">
@@ -305,7 +297,7 @@ export default function App() {
 
                 {/* Follow Me Widget */}
                 <div className="text-center p-10 border border-gray-100" style={{ backgroundColor: theme.primaryColor }}>
-                  <h4 className="font-serif text-xl mb-8 tracking-[0.15em] uppercase">
+                  <h4 className="font-serif text-xl mb-8 tracking-[0.15em] uppercase blue-neon-title">
                     Follow Me
                   </h4>
                   <div className="flex justify-center gap-6">
@@ -320,7 +312,7 @@ export default function App() {
 
       {/* Footer */}
       <footer className="text-white py-20 text-center mt-20" style={{ backgroundColor: theme.footerBackground }}>
-        <h2 className="font-serif text-3xl tracking-[0.2em] mb-10">{content.siteName}</h2>
+        <h2 className="font-serif text-3xl tracking-[0.2em] mb-10 blue-neon-title">{content.siteName}</h2>
         <div className="flex justify-center gap-8 mb-12">
           <SocialIcons size={20} className="text-gray-400 hover:text-white transition-colors" />
         </div>
