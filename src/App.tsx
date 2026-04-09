@@ -4,6 +4,7 @@ import content from './data/content.json';
 
 const theme = content.theme;
 
+
 export default function App() {
   const [activePostId, setActivePostId] = useState<string | null>(null);
   const [activeView, setActiveView] = useState<{type: string, value?: string}>({ type: 'home' });
